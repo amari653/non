@@ -1,0 +1,58 @@
+/* Supprime les marges et le padding par défaut */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    font-family: Impact, fantasy;
+    background-color: transparent; /* Fond transparent */
+}
+
+/* Conteneur des pages : on ne veut pas de fond */
+.container {
+    display: none; /* Cache les pages par défaut */
+    position: relative; /* Positionner les éléments par rapport à ce conteneur */
+    height: 100vh; /* Utilise toute la hauteur de la fenêtre */
+    background-color: transparent; /* Fond transparent */
+}
+
+.container.active {
+    display: block; /* Affiche uniquement la page active */
+    text-align: center;
+}
+
+/* Styles pour les images dispersées */
+img {
+    max-width: 150px; /* Limite la taille des images */
+    height: auto;
+    position: absolute; /* Permet de les positionner absolument */
+    border: 3px solid #d67fa2; /* Bordure rose foncé */
+    border-radius: 10px; /* Bordures arrondies */
+    object-fit: contain; /* Permet aux images de s'adapter à la taille sans être déformées */
+}
+
+/* Styles des boutons */
+.buttons {
+    margin-top: 20px;
+    position: relative;
+    z-index: 10; /* S'assurer que les boutons sont au-dessus des images */
+    
+    button {
+    background-color: #faa5c8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

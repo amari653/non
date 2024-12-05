@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histoire interactive</title>
+    <link rel="stylesheet" href="oij.css">
+    <style>
+        .container {
+            display: none; /* Cache toutes les pages par défaut */
+        }
+        .container.active {
+            display: block; /* Affiche uniquement la page active */
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function goToPage(pageId) {
+            // Cache toutes les pages
+            const containers = document.querySelectorAll('.container');
+            containers.forEach(container => container.classList.remove('active'));
+
+            // Affiche la page cible
+            const targetPage = document.getElementById(`page${pageId}`);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+        }
+
+        function rediriger() {
+            window.location.href = "nrv.html"; // Remplace "nrv.html" par le fichier cible de ton choix
+        }
+    </script>
+</head>
+<body>
+    <!-- Page 1 -->
+    <div class="container active" id="page1">
+        <img src="https://i.pinimg.com/736x/6f/90/89/6f9089af16a87bacc5f20392eadf6835.jpg" alt="Image de test">
+        <h1>Je suis amoureuse de toi, tu veux bien être mon copain ?</h1>
+        <div class="buttons">
+            <button onclick="goToPage(3)">Oui</button>
+            <button class="no" onclick="goToPage(2)">Non</button>
+        </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="container" id="page2">
+        <img src="https://i.pinimg.com/736x/9f/84/15/9f841599cdfb54aacc1082206b5170f9.jpg" alt="Image mignonne">
+        <h1>STP</h1>
+        <div class="buttons">
+            <button onclick="goToPage(3)">Oui</button>
+            <button onclick="goToPage(3)">Oui</button>
+        </div>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="container" id="page3">
+        <img src="https://i.pinimg.com/736x/11/16/8b/11168bdb97a0196d95aac324db6d036e.jpg" alt="Image mignonne">
+        <h1>OUAISS ON EST AMOUREUX</h1>
+        <div class="buttons">
+            <button onclick="goToPage(6)">JE</button>
+            <button onclick="goToPage(5)">T'AIME</button>
+        </div>
+    </div>
+
+    <!-- Page 4 -->
+    <div class="container" id="page4">
+        <img src="https://i.pinimg.com/originals/23/fc/3d/23fc3d063b303fdb98c585613e482511.gif" alt="Image mignonne">
+        <h1>feur?</h1>
+        <div class="buttons">
+            <button onclick="goToPage(5)">JE</button>
+            <button onclick="goToPage(6)">T'AIME</button>
+        </div>
+    </div>
+
+    <!-- Page 5 -->
+    <div class="container" id="page5">
+        <img src="https://i.pinimg.com/originals/d8/d0/63/d8d0630eb503948fc31e79e5b87d0da7.gif" alt="Image mignonne">
+        <h1>tu veux voir quoi?</h1>
+        <div class="buttons">
+            <button onclick="goToPage(7)">notre playlist</button>
+            <button onclick="goToPage(5)">⤶</button>
+            <button onclick="goToPage(8)">nos photos</button>
+        </div>
+    </div>
+
+    <!-- Page 6 -->
+    <div class="container" id="page6">
+        <img src="https://i.pinimg.com/originals/23/fc/3d/23fc3d063b303fdb98c585613e482511.gif" alt="Image mignonne">
+        <h1>Du coup on est ensemble,en mode amoureux/amoureuse, copain/copine ?</h1>
+        <div class="buttons">
+            <button onclick="rediriger()">Oui</button>
+            <button onclick="goToPage(2)">Non</button>
+        </div>
+    </div>
+
+    <!-- Page 7 -->
+    <div class="container" id="page7">
+        <img src="https://i.pinimg.com/originals/8c/36/96/8c3696afcfd22256d4b136370ea268b0.gif" alt="Image mignonne">
+        <h1>notre super playlist!</h1>
+        <div class="buttons">
+            <button onclick="goToPage(5)">⤶</button>
+            <button onclick="window.location.href='https://open.spotify.com/playlist/5UJCyTkmePAd6ZZ6TzMM71?si=PUzrh1_1TGilET58yI16HA'">Écouter la playlist</button>
+             <button onclick="goToPage(5)">⤶</button>
+        </div>
+    </div>
+
+    <!-- Page 8 -->
+    <div class="container" id="page8">
+        <img src="https://i.pinimg.com/originals/fd/30/84/fd30846b19ff684f079d23b217a481e8.gif">
+        <h1>nos photos mimis (je crois)</h1>
+        <div class="buttons">
+            <button onclick="goToPage(5)">⤶</button>
+            <button onclick="window.location.href='https://drive.google.com/drive/folders/13nonlQfni88facmoV5N2t6OnM7JwHSK4?usp=drive_link'">mlem</button>
+                        
+        </div>
+    </div>
+</body>
+</html>

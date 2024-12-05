@@ -1,0 +1,94 @@
+body {
+    background-color: #ffe4e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Impact, fantasy;
+    text-align: center;
+}
+
+.container {
+    display: none;
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.container.active {
+    display: block;
+}
+
+.container::before {
+    content: "୨𐙚⋆°.";
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #fff;
+    background-color: #ff69b4;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10%;
+}
+h1 {
+    font-size: 24px;
+    color: #f689b6;
+    margin-bottom: 20px;
+}
+.link-text {
+    color: #e83e8c; /* Rose */
+    text-decoration: none; /* Enlève la sous-ligne du lien */
+    font-weight: bold; /* Rend le texte plus gras */
+}
+
+.link-text:hover {
+    color: #d6336c; /* Rose plus foncé au survol */
+}
+
+.buttons {
+    margin-top: 20px;
+button {
+    background-color: #faa5c8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+    
+}
+button:hover {
+    background-color: #cf7b9e;
+}
+button.no {
+    background-color: #d67fa2;
+}
+button.no:hover {
+    background-color: #faa5c8;
+}
+.button-oui {
+    background-color: transparent; /* Rose pour le bouton "Oui" */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-oui:hover {
+    background-color: #d6336c; /* Rose plus foncé au survol */

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histoire interactive</title>
+    <link rel="stylesheet" href="poupouf.css">
+    <style>
+        /* Supprime les marges et le padding par défaut */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            background-color: #ffe4e1; /* Fond transparent */
+            overflow: hidden; /* Empêche les barres de défilement */
+            color: #f789b4; /* Rose foncé */
+        }
+
+        /* Conteneur des pages : on ne veut pas de fond */
+        .container {
+            display: none; /* Cache les pages par défaut */
+            position: relative; /* Positionner les éléments par rapport à ce conteneur */
+            height: 100vh; /* Utilise toute la hauteur de la fenêtre */
+            background-color: transparent; /* Fond transparent */
+        }
+
+        .container.active {
+            display: block; /* Affiche uniquement la page active */
+            text-align: center;
+        }
+
+        /* Styles pour les images dispersées */
+        img {
+            max-width: 250px; /* Limite la taille des images */
+            height: auto;
+            position: absolute; /* Permet de les positionner absolument */
+            border: 0px solid #f789b4; /* Bordure rose foncé */
+            border-radius: 0px; /* Bordures arrondies */
+            object-fit: contain; /* Permet aux images de s'adapter à la taille sans être déformées */
+        }
+
+        /* Styles des boutons */
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+            z-index: 10; /* S'assurer que les boutons sont au-dessus des images */
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Style du message */
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #007bff;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Page 1 -->
+    <div class="container active" id="page1">
+        <img src="https://i.pinimg.com/originals/a9/ef/43/a9ef43e35b69ade775cb2296a67e87b1.gif" alt="Image de test" id="img1">
+        <img src="https://i.pinimg.com/originals/b8/a5/fa/b8a5fa100ffb73f3dfcb4f94270959d6.gif" id="img2">
+        <img src="https://i.pinimg.com/originals/b4/54/69/b4546912cf7c8ed2f32bd1b7ca4021b2.gif" id="img3">
+        <img src="https://i.pinimg.com/originals/1c/57/31/1c57316647107a7e93031ef8c7b6f1f5.gif" id="img4">
+        <img src="https://i.pinimg.com/originals/bc/39/1d/bc391d5dce7d0db4906cd93a4e489ad5.gif">
+        <img src="https://i.pinimg.com/originals/cb/15/29/cb1529c0c35171b3010efaf6cde93f8b.gif">
+        <img src="https://i.pinimg.com/originals/d0/95/8a/d0958a757cbe2dbd3ae0fc8f2abf1813.gif">
+        <img src="https://i.pinimg.com/originals/31/a7/2a/31a72afda250825d993400c3ef28c55c.gif">
+        <img src="https://i.pinimg.com/originals/ed/ba/02/edba02290dd897bd740647beb82f6e0b.gif">
+        <img src="https://i.pinimg.com/originals/1a/42/94/1a429405f81058fcbadeee192039a9de.gif">
+        <img src="https://i.pinimg.com/originals/55/61/01/556101a9b963c6c66837fb2a192ba1dd.gif">
+        <img src="https://i.pinimg.com/originals/76/26/ed/7626ed7c24427d83a79a2c7832b80320.gif">
+        <img src="https://i.pinimg.com/originals/6b/5f/9e/6b5f9e4d76cc73b17cac7371d835d887.gif">
+
+        <h1>ZUPAR</h1>
+  
+        <div class="buttons">
+               <button onclick="window.location.href='bl.html'">⤶</button>
+            <button onclick="alert('je suis fière de toi!‹𝟹')">❤︎</button>
+            <button onclick="alert('je taime très fort⋆𐙚₊˚⊹♡')">❤︎</button>
+</div>
+
+
+
+<script>
+        // Fonction pour positionner les images de manière aléatoire
+        function positionnerImages() {
+            const images = document.querySelectorAll('img');
+            const bodyWidth = window.innerWidth; // Largeur de la fenêtre
+            const bodyHeight = window.innerHeight; // Hauteur de la fenêtre
+
+            images.forEach(image => {
+                const imageWidth = image.width; // Largeur de l'image
+                const imageHeight = image.height; // Hauteur de l'image
+
+                // Calculer une position aléatoire mais dans les limites visibles
+                const randomTop = Math.random() * (bodyHeight - imageHeight); // Position aléatoire sur la hauteur
+                const randomLeft = Math.random() * (bodyWidth - imageWidth); // Position aléatoire sur la largeur
+
+                // Positionner l'image
+                image.style.top = `${randomTop}px`;
+                image.style.left = `${randomLeft}px`;
+            });
+        }
+
+        // Appeler la fonction dès que la page est chargée
+        window.onload = positionnerImages;
+
+        // Recalculer la position des images à chaque redimensionnement de la fenêtre
+        window.onresize = positionnerImages;
+    </script>
+
+</body>
+</html>

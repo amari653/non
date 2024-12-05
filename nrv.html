@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouton fuyant</title>
+    <link rel="stylesheet" href="oij.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe4e1;
+        }
+        .container {
+            text-align: center;
+            display: none; /* Cacher toutes les pages par défaut */
+        }
+        .container.active {
+            display: block; /* Afficher seulement la page active */
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+        .no {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="container active" id="page1">
+        <img src="https://i.pinimg.com/736x/e3/38/1e/e3381e515cd07966976c6d9a2dbe1ce4.jpg" alt="Image mignonne">
+        <h1> Du coup tu peux m'offrir d'autres Jellycat?</h1>
+        <div class="buttons">
+            <button onclick="window.location.href='lasuite.html'">Oui</button>
+            <button class="no" onclick="goToPage(2)">Non</button>
+        </div>
+
+
+    <script>
+        // Navigation entre les pages
+        function goToPage(pageNumber) {
+            const containers = document.querySelectorAll('.container');
+            containers.forEach(container => container.classList.remove('active'));
+            document.getElementById('page' + pageNumber).classList.add('active');
+        }
+
+        // Bouton "Non" qui s'éloigne
+        const noButtons = document.querySelectorAll('.no');
+        noButtons.forEach(button => {
+            button.addEventListener('mouseover', () => {
+                const x = Math.random() * (window.innerWidth - button.offsetWidth);
+                const y = Math.random() * (window.innerHeight - button.offsetHeight);
+                button.style.left = `${x}px`;
+                button.style.top = `${y}px`;
+            });
+        });
+    </script>
+</body>
+</html>
